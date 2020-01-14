@@ -40,4 +40,14 @@ steps:
   inputs:
     targetPath: '$(Pipeline.Workspace)'
     artifact: 'calc artifact'
-    publishLocation: 'pipeline' 
+    publishLocation: 'pipeline'
+
+- task: ArchiveFiles@2
+  inputs:
+    rootFolderOrFile: '$(Build.BinariesDirectory)'
+    includeRootFolder: true
+    archiveType: 'zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+    replaceExistingArchive: true
+    verbose: true
+    
