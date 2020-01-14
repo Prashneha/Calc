@@ -25,5 +25,5 @@ steps:
   inputs:
     codeCoverageTool: 'Cobertura'
     summaryFileLocation: '$(System.DefaultWorkingDirectory)/**/**/site/cobertura/coverage.xml'
-    pathToSources: '$(System.DefaultWorkingDirectory)/**/src/main/java/'
+    pathToSources: '$(System.DefaultWorkingDirectory)/**/**/src/main/java/com/kavinschool/calc/'
     reportDirectory: '$(System.DefaultWorkingDirectory)/**/**/site/cobertura'   
