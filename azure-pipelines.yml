@@ -29,7 +29,12 @@ steps:
     reportDirectory: '$(System.DefaultWorkingDirectory)/**/**/site/cobertura'
   displayName: Publish code coverage
 
- 
+- task: PublishTestResults@2
+  inputs:
+     testResultsFormat: 'JUnit'
+     testResultsFiles: '**/TEST-*.xml'
+     testRunTitle: 'Test Results'
+
 - task: ArchiveFiles@2
   inputs:
     rootFolderOrFile: '$(Build.BinariesDirectory)'
